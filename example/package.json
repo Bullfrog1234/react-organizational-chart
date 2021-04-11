@@ -8,7 +8,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-organizational-chart": "file:..",
+    "react-organizational-chart": "file:C:/Users/antbo/Documents/GitHub/react-organizational-chart/",
     "react-scripts": "^1.1.4"
   },
   "scripts": {

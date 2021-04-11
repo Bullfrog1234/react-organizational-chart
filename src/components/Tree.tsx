@@ -1,7 +1,19 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
 import TreeNode, { TreeNodeProps } from './TreeNode';
+import { buildCSS, classNames } from './BuildCSS';
 
+function TreeContainer({
+  children,
+  lineHeight,
+  lineWidth,
+  lineColor,
+  lineBorderRadius,
+  nodePadding,
+}: TreeProps & React.PropsWithChildren<{}>) {
+  buildCSS(lineHeight, lineWidth, lineColor, lineBorderRadius, nodePadding);
+  return <ul className={classNames.treeContainer}>{children}</ul>;
+}
+/*
 const TreeContainer: React.ComponentType<TreeProps> = styled.ul`
   padding-inline-start: 0;
   margin: 0;
@@ -18,8 +30,8 @@ const TreeContainer: React.ComponentType<TreeProps> = styled.ul`
   --tree-line-border-radius: var(--line-border-radius, 5px);
   --tree-node-padding: var(--node-padding, 5px);
 `;
-
-type TreeProps = {
+*/
+export type TreeProps = {
   lineHeight?: string;
   lineWidth?: string;
   lineColor?: string;
@@ -32,7 +44,7 @@ function Tree({
   label,
   lineHeight = '20px',
   lineWidth = '1px',
-  lineColor = 'black',
+  lineColor = 'red',
   nodePadding = '5px',
   lineBorderRadius = '5px',
 }: TreeProps & TreeNodeProps) {
